@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Local Service Connect{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-4">Admin Dashboard</h1>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h5 class="card-title">Total Users</h5>
+                <p class="card-text display-6">{{ total_users }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h5 class="card-title">Total Orders</h5>
+                <p class="card-text display-6">{{ total_orders }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <h5 class="card-title">Total Payments</h5>
+                <p class="card-text display-6">{{ total_payments }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card bg-danger text-white">
+            <div class="card-body">
+                <h5 class="card-title">Pending Orders</h5>
+                <p class="card-text display-6">{{ pending_orders }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Member 2 Dashboard Section -->
+<div class="card mt-4 mb-4">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">Member 2 - Profile & Services Management</h5>
+    </div>
+    <div class="card-body">
+        <!-- === MEMBER 2 FUNCTIONALITY WILL BE ADDED HERE === -->
+        <!-- Profile approval dashboard and service listing management -->
+        <p class="text-muted">To be implemented: Profile verification, service listings, notification dashboard</p>
+    </div>
+</div>
+
+<!-- Member 3 Dashboard Section -->
+<div class="card mt-4 mb-4">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">Member 3 - Booking & Analytics</h5>
+    </div>
+    <div class="card-body">
+        <!-- === MEMBER 3 FUNCTIONALITY WILL BE ADDED HERE === -->
+        <!-- Booking management and analytics dashboard -->
+        <p class="text-muted">To be implemented: Booking management, review system, ad promotions, analytics charts</p>
+    </div>
+</div>
+
+<!-- Member 4 Dashboard Section -->
+<div class="card mt-4 mb-4">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">Member 4 - Location & Verification</h5>
+    </div>
+    <div class="card-body">
+        <!-- === MEMBER 4 FUNCTIONALITY WILL BE ADDED HERE === -->
+        <!-- Location management and verification -->
+        <p class="text-muted">To be implemented: Location zones, provider verification, chat moderation, subscription management</p>
+    </div>
+</div>
+{% endblock %}

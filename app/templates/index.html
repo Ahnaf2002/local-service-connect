@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Local Service Connect{% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-lg-8">
+        <h1 class="display-4">Welcome to Local Service Connect</h1>
+        <p class="lead text-muted">
+            Connect with trusted local service providers or offer your services to customers in your area.
+        </p>
+    </div>
+</div>
+
+{% if not current_user.is_authenticated %}
+<div class="row mb-5">
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center py-5">
+                <h3 class="card-title mb-3">🔍 Looking for Services?</h3>
+                <p class="card-text text-muted">
+                    Find and book reliable local service providers in your area.
+                </p>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg mt-3">
+                    Get Started as a Customer
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center py-5">
+                <h3 class="card-title mb-3">💼 Offering Services?</h3>
+                <p class="card-text text-muted">
+                    Register as a service provider and start earning today.
+                </p>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-success btn-lg mt-3">
+                    Register as a Provider
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">How It Works</h2>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 text-center">
+            <div class="card-body">
+                <div class="display-6 mb-3">1️⃣</div>
+                <h5 class="card-title">Sign Up</h5>
+                <p class="card-text text-muted">
+                    Create your account as a customer or service provider.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 text-center">
+            <div class="card-body">
+                <div class="display-6 mb-3">2️⃣</div>
+                <h5 class="card-title">Browse or List</h5>
+                <p class="card-text text-muted">
+                    Find services or list your offerings with detailed information.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 text-center">
+            <div class="card-body">
+                <div class="display-6 mb-3">3️⃣</div>
+                <h5 class="card-title">Pay & Complete</h5>
+                <p class="card-text text-muted">
+                    Secure payment processing and service completion tracking.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <h4>Welcome, {{ current_user.username }}!</h4>
+            {% if current_user.is_admin %}
+            <p>You have admin access. Visit the <a href="{{ url_for('admin.dashboard') }}">admin dashboard</a> to manage the platform.</p>
+            {% elif current_user.is_provider %}
+            <p>You are registered as a service provider. Complete your profile to start listing services.</p>
+            {% else %}
+            <p>You are registered as a customer. Browse available services or list your needs.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Recent Orders</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">No orders yet. Start by exploring services!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <a href="{{ url_for('payments.create_payment') }}" class="btn btn-outline-primary btn-sm me-2">Make Payment</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Member 2 Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h5 class="mb-0">Member 2 - Profiles & Services</h5>
+            </div>
+            <div class="card-body">
+                <!-- === MEMBER 2 FUNCTIONALITY WILL BE ADDED HERE === -->
+                <p class="text-muted">Profile management, service listings, and notifications coming soon...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Member 3 Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h5 class="mb-0">Member 3 - Bookings & Reviews</h5>
+            </div>
+            <div class="card-body">
+                <!-- === MEMBER 3 FUNCTIONALITY WILL BE ADDED HERE === -->
+                <p class="text-muted">Booking management, reviews, promotions, and analytics coming soon...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Member 4 Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h5 class="mb-0">Member 4 - Location & Verification</h5>
+            </div>
+            <div class="card-body">
+                <!-- === MEMBER 4 FUNCTIONALITY WILL BE ADDED HERE === -->
+                <p class="text-muted">Location-based search, chat, verification, and subscriptions coming soon...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
