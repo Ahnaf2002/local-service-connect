@@ -1,0 +1,42 @@
+# CODEOWNERS file for Local Service Connect
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Core Framework & Auth (Member 1)
+/app/__init__.py @Ahnaf2002
+/app/extensions.py @Ahnaf2002
+/app/models.py @Ahnaf2002
+/app/auth/ @Ahnaf2002
+/app/admin/ @Ahnaf2002
+/app/payments/ @Ahnaf2002
+/config.py @Ahnaf2002
+/run.py @Ahnaf2002
+/.env.example @Ahnaf2002
+/requirements.txt @Ahnaf2002
+
+# === MEMBER 2 AREAS ===
+# Profile & Services & Notifications
+# /app/profile/ @member2-username
+# /app/services/ @member2-username
+# /app/notifications/ @member2-username
+
+# === MEMBER 3 AREAS ===
+# Booking & Reviews & Ad Promotions & Analytics
+# /app/bookings/ @member3-username
+# /app/reviews/ @member3-username
+# /app/analytics/ @member3-username
+
+# === MEMBER 4 AREAS ===
+# Location & Chat & Verification & Subscriptions
+# /app/location/ @member4-username
+# /app/chat/ @member4-username
+# /app/verification/ @member4-username
+# /app/subscriptions/ @member4-username
+
+# Documentation & Config
+/README.md @Ahnaf2002
+/.gitignore @Ahnaf2002
+/CONTRIBUTING.md @Ahnaf2002
+/.github/ @Ahnaf2002
+
+# All
+* @Ahnaf2002
