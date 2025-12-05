@@ -1,7 +1,7 @@
-// Local Service Connect - Main JavaScript File
+// Sheba APP - Main JavaScript File
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Local Service Connect - Application Loaded');
+    console.log('Sheba APP - Application Loaded');
     
     // Initialize tooltips and popovers
     initializeBootstrap();

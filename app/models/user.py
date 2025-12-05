@@ -1,10 +1,11 @@
 from datetime import datetime
 from app.extensions import db
 from sqlalchemy import Index
+from flask_login import UserMixin
 from .base import IdMixin, TimestampMixin
 from .role import user_roles
 
-class User(db.Model, IdMixin, TimestampMixin):
+class User(UserMixin, db.Model, IdMixin, TimestampMixin):
     __tablename__ = "users"
 
     email = db.Column(db.String(255), nullable=False, unique=True, index=True)

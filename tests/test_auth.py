@@ -18,7 +18,7 @@ class TestIndex:
         """Test index page for unauthenticated users"""
         response = client.get('/')
         assert response.status_code == 200
-        assert b'Local Service Connect' in response.data
+        assert b'Sheba APP' in response.data
         assert b'Looking for Services' in response.data
     
     def test_index_authenticated(self, client, auth_user):

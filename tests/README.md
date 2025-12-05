@@ -1,6 +1,6 @@
-# Tests for Local Service Connect
+# Tests for Sheba APP
 
-This directory contains pytest tests for the Local Service Connect application.
+This directory contains pytest tests for the Sheba APP application.
 
 ## Running Tests
 

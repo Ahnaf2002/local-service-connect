@@ -23,6 +23,16 @@ def create_app(config_name=None):
     
     # Import all models for Alembic to discover them
     from . import models  # noqa
+    from app.models import User
+    
+    # Register user loader for Flask-Login
+    @login_manager.user_loader
+    def load_user(user_id):
+        return db.session.get(User, int(user_id))
+    
+    # Set login view for unauthorized access
+    login_manager.login_view = 'auth.login'
+    login_manager.login_message = 'Please log in to access this page.'
     
     # Register blueprints
     from app.auth import auth_bp

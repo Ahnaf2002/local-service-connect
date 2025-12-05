@@ -1,6 +1,6 @@
-# Contributing to Local Service Connect
+# Contributing to Sheba APP
 
-Thank you for being part of the Local Service Connect team! This document outlines our contribution guidelines and workflow.
+Thank you for being part of the Sheba APP team! This document outlines our contribution guidelines and workflow.
 
 ## Team Structure
 
