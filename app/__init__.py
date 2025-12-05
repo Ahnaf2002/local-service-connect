@@ -21,6 +21,9 @@ def create_app(config_name=None):
     migrate.init_app(app, db)
     login_manager.init_app(app)
     
+    # Import all models for Alembic to discover them
+    from . import models  # noqa
+    
     # Register blueprints
     from app.auth import auth_bp
     from app.admin import admin_bp
@@ -40,8 +43,6 @@ def create_app(config_name=None):
             'Payment': __import__('app.models', fromlist=['Payment']).Payment,
         }
     
-    # Create tables
-    with app.app_context():
-        db.create_all()
+    # Note: db.create_all() is handled by Flask-Migrate; migrations are applied via flask db upgrade
     
     return app

@@ -48,7 +48,7 @@ instance/
 .webassets-cache
 
 # Migrations
-migrations/
+# migrations/  # Note: Keeping migrations in version control for team collaboration
 
 # dotenv
 .env
